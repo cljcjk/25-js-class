@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="搜索引擎的关键字">
+    <meta name="Description" content="网站的主要内容描述">
+    <title>枫叶</title>
+    <style>
+        #wrap{
+            margin: 100px auto;
+        }
+        #wrap ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px auto;
+        }
+        #wrap ul li{
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+        #wrap ul .black{
+            background-color: black;
+        }
+        #wrap .box1{
+            float: left;
+            width: 200px;
+            height: 15px;
+            margin-left: 550px;
+        }
+        #wrap .btn{
+            text-align: center;
+            height: 21px;
+        }
+    </style>
+</head>
+<body>
+<div id='wrap'>
+    <input type="text" placeholder="请输入棋盘路数" class="box1">
+    <input type="button" value="显示" class="btn">
+    <ul></ul>
+</div>
+<script>
+    let oUl = document.querySelector("#wrap ul")
+    let oBox1= document.querySelector("#wrap .box1")
+    let oBtn= document.querySelector("#wrap .btn")
+    let isEven=num=>num%2===0;
+    oBtn.onclick=function ql(){
+        oUl.innerHTML="";
+        let n=oBox1.value;
+        oUl.style.height=n*50+"px"
+        oUl.style.width=n*50+"px"
+        for(let i=0;i<n;i++){
+            for(let j=0;j<n;j++) {
+                let sum=i+j
+                if(isEven(sum)){
+                    oUl.innerHTML += `<li class="black"></li>`
+                }else{
+                    oUl.innerHTML += `<li></li>`
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

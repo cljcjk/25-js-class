@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="搜索引擎的关键字">
+    <meta name="Description" content="网站的主要内容描述">
+    <title>枫叶</title>
+    <style>
+        .box{
+            width: 250px;
+            margin: 100px auto;
+        }
+        .box .box1{
+            float: left;
+            width: 200px;
+            height: 30px;
+        }
+        .box .btn{
+            text-align: center;
+            /*width: 36px;*/
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="text" placeholder="请输出100至999的所有水仙花数" class="box1">
+    <input type="button" value="输出" class="btn">
+</div>
+<script>
+    let oInput= document.querySelector("input")
+    let oBtn= document.querySelector(".btn")
+    let cube=num=>num*num*num //求立方数
+    let isNum=function (i) {
+        let str=i+"";//获取到字符串水仙花数
+        let a=str[0]*1; //水仙花数百位数
+        let b=str[1]*1; //水仙花数十位数
+        let c=str[2]*1; //水仙花数个位数
+        let result=cube(a)+cube(b)+cube(c) //立方和
+        return i*1===result //判断水仙花数是否全等于每一位数的立方和
+    }
+    function fn() {
+        for(let i=100;i<=999;i++){
+            if(isNum(i)){
+                oInput.value+=i+"  ";
+            }
+        }
+    }
+    oBtn.onclick=fn //点击按钮执行函数
+</script>
+</body>
+</html>

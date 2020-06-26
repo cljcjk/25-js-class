@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="搜索引擎的关键字">
+    <meta name="Description" content="网站的主要内容描述">
+    <title>枫叶</title>
+    <style>
+        .box{
+            width: 220px;
+            margin: 100px auto;
+        }
+        .box1{
+            height: 300px;
+            width: 216px;
+            background-color:darkseagreen;
+            overflow-y:scroll;
+        }
+        .box input{
+            float: left;
+            height: 30px;
+        }
+        .box .btn{
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1"></div>
+    <input type="text">
+    <input type="button" value="发送" class="btn">
+</div>
+<script>
+    let talk = document.querySelector(".box1")
+    let oInput= document.querySelector("input")
+    let oBtn= document.querySelector(".btn")
+    let str=""
+    oBtn.onclick=fn
+    function fn() {
+        str+=`<div>${oInput.value}</div><br>`
+        talk.innerHTML=str
+        oInput.value=""
+    }
+</script>
+</body>
+</html>

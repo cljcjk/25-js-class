@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="搜索引擎的关键字">
+    <meta name="Description" content="网站的主要内容描述">
+    <title>枫叶</title>
+    <style>
+        #wrap ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap .list li{
+            float: left;
+            width:100px;
+            line-height: 20px;
+            text-align: left;
+        }
+        #wrap .list{
+            list-style-type: none;
+        }
+        #wrap .box1{
+            float: left;
+            width: 100px;
+            height: 17px;
+        }
+        #wrap .btn{
+            text-align: center;
+            line-height: 21px;
+        }
+    </style>
+</head>
+<body>
+<div id='wrap'>
+    <input type="text" placeholder="请输入乘法表" class="box1">
+    <input type="button" value="输出" class="btn">
+    <ul class="list"></ul>
+</div>
+<script>
+    let oBtn= document.querySelector(".btn")
+    let oList=document.querySelector("#wrap .list")
+    let oBox1= document.querySelector("#wrap .box1")
+    let str=""
+    oBtn.onclick=fn
+    function fn() {
+        str="";
+        let n = oBox1.value;
+        oList.style.width=n*100+"px"
+        for(let i=1;i<=n;i++){
+            for(let j=1;j<=i;j++){
+                str+=`<li>${j}*${i}=${i*j}</li>`;
+            }
+            str+="<br>"
+        }
+        oList.innerHTML=str;
+    }
+</script>
+</body>
+</html>
