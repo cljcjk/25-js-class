@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="搜索引擎的关键字">
+    <meta name="Description" content="网站的主要内容描述">
+    <title>枫叶</title>
+    <style>
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border:1px solid black;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<div id='wrap'></div>
+<script>
+    wrap.innerHTML="<div>题目1:![]=>!true=>false<br>" +
+                          "题目2:+[]=>+0=>0<br>" +
+                          "题目3:+![]=>+!true=>+false=>+0=>0<br>" +
+                          "题目4:[]+[]=>''+''=>''<br>" +
+                          "题目5:{}+{}=>'[object Object]'+'[object Object]'=>'[object Object][object Object]'<br>" +
+                          "题目6:{}+[]=>'[object Object]'+''=>'[object Object]'<br>" +
+                          "题目7:{a:0}+1=>'[object Object]'+'1'=>'[object Object]1'<br>" +
+                          "题目8:[]+{}=>''+'[object Object]'=>'[object Object]'<br>" +
+                          "题目9:[]+![]=>''+!true=>''+false=>'false'<br>" +
+                          "题目10:{}+[]=>'[object Object]'+''=>'[object Object]'<br>" +
+                          "题目11:![]+[]=>!true+''=>false+''=>'false'<br>" +
+                          "题目12:''+{}=>''+'[object Object]'=>'[object Object]'<br>" +
+                          "题目13:{}+''=>'[object Object]'+''=>'[object Object]'<br>" +
+                          "题目14:[][[]]+[]=>？<br>" +
+                          "题目15:+!![]+[]=>+!!true+[]=>+true+[]=>1+''>'1'<br>" +
+                          "题目15:+!![]=>+!!true=>+true=>1<br>" +
+                          "题目16:1-{}=>1-NaN=>NaN<br>" +
+                          "题目17:1-[]=>1-0=>1<br>" +
+                          "题目18:true-1=>1-1=>0<br>" +
+                          "题目19:{}-1=>NaN-1=>NaN<br>" +
+                          "题目20:[]==![]=>true==false=>false<br>" +
+                         "</div>"
+</script>
+</body>
+</html>
