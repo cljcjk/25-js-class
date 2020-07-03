@@ -8,6 +8,32 @@
 </head>
 <body>
 <div id='wrap'></div>
-<script></script>
+<script>
+/*数组的头部 插入元素
+.unshift
+参数: 多个参数
+返回: 返回*/
+function arrUnshiftClj(arr,...rest) {
+    let newarr=[];//声明一个新空数组
+    let length = rest.length
+    // 原数组的长度
+    let oldLength = arr.length
+    // 新数组的长度
+    arr.length += length
+    //用新数组保存原arr数组
+    for(let k=0;k<oldLength;k++){
+        newarr[k]=arr[k];
+    }
+    // 把arr数组的前length项变成数组rest项
+    for(let i=0;i<length;i++){
+        arr[i]=rest[i]
+    }
+    //把arr数组的后arr.length-length项变成原数组prearr项
+    for(let j=length;j<arr.length;j++){
+        arr[j]=newarr[j-length]
+    }
+    return arr.length;
+}
+</script>
 </body>
 </html>

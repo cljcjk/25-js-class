@@ -8,6 +8,33 @@
 </head>
 <body>
 <div id='wrap'></div>
-<script></script>
+<script>
+/*数组的尾部 删除元素
+arr.pop
+不接受参数  一次性只能删除一个元素
+返回值: 返回被删除的那个元素*/
+/*function arrPopClj(arr) {
+    let rmarr = arr[arr.length - 1]
+    let i = arr.length;
+    i--;
+    if (i < 0) i = 0;
+    arr.length = i;
+    return rmarr;
+}*/
+/*数组的尾部 删除多个元素
+接受参数个数  一次性能删除多个元素
+返回值: 返回被删除的那些元素*/
+function arrPopClj(arr, num) {
+    let rmarr = []
+    let i = arr.length;
+    for (let j = 0; j <= i - num; j++) {
+        rmarr[j] = arr[j + num - 1]
+    }
+    i -= num;
+    if (i < 0) i = 0;
+    arr.length = i;
+    return rmarr
+}
+</script>
 </body>
 </html>

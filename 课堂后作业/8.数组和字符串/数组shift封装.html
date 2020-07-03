@@ -8,6 +8,22 @@
 </head>
 <body>
 <div id='wrap'></div>
-<script></script>
+<script>
+/*数组的头部 删除元素
+.shift
+参数: 不接受
+返回: 被删除的元素*/
+function arrShiftClj(arr) {
+    let rmarr = arr[0];
+    let j = arr.length;
+    for (let i = 0; i < j - 1; i++) {
+        arr[i] = arr[i + 1]
+    }
+    j--;
+    if (j < 0) j = 0;
+    arr.length = j;
+    return rmarr;
+}
+</script>
 </body>
 </html>

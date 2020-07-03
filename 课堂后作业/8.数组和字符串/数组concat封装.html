@@ -8,6 +8,22 @@
 </head>
 <body>
 <div id='wrap'></div>
-<script></script>
+<script>
+/*数组的拼接
+  .concat
+参数: 一个参数
+返回: 拼接后的数组*/
+function arrConcatClj(arr1, ...arr2) {
+    let newarr = [];//声明一个空数组
+    let length = arr1.length + arr2.length;//新数组长度
+    for (let i = 0; i < length; i++) {
+        newarr[i] = arr1[i]//设置新数组的前arr1.length项为arr1的项
+    }
+    for (let i = arr1.length; i < length; i++) {
+        newarr[i] = arr2[i - arr1.length]//设置新数组的后arr2.length项为arr2的项
+    }
+    return newarr;
+}
+</script>
 </body>
 </html>
